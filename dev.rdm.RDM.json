@@ -24,27 +24,19 @@
                 "cp ./bin/linux/release/rdm $FLATPAK_DEST/bin"
             ],
             "post-install": [
-                "install -Dm644 icon.svg /app/share/icons/hicolor/scalable/apps/dev.rdm.RDM.svg",
-                "install -Dm644 dev.rdm.RDM.metainfo.xml -t /app/share/metainfo",
-                "install -Dm644 dev.rdm.RDM.desktop -t /app/share/applications"
+                "install -Dm644 ./src/resources/images/logo.svg /app/share/icons/hicolor/scalable/apps/dev.rdm.RDM.svg",
+                "install -Dm644 ./src/resources/flatpak/dev.rdm.RDM.metainfo.xml -t /app/share/metainfo",
+                "install -Dm644 ./src/resources/flatpak/dev.rdm.RDM.desktop -t /app/share/applications"
             ],
             "sources": [
                 {
                     "type": "git",
                     "url": "https://github.com/uglide/RedisDesktopManager",
-                    "commit": "0b2a808f32e18421f64aae30221eb97caa838f06"
-                },
-                {
-                    "type": "file",
-                    "path": "dev.rdm.RDM.desktop"
-                },
-                {
-                    "type": "file",
-                    "path": "dev.rdm.RDM.metainfo.xml"
-                },
-                {
-                    "type": "file",
-                    "path": "icon.svg"
+                    "commit": "0b2a808f32e18421f64aae30221eb97caa838f06",
+                    "x-checker-data": {
+                        "type": "git",
+                        "tag-pattern": "^([\\d.]+)$"
+                    }
                 }
             ]
         }
