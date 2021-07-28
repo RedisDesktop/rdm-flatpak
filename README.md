@@ -18,7 +18,7 @@ rm pip-dependencies.json
 # Build & Test
 ```
 flatpak-builder build dev.rdm.RDM.json --force-clean
-flatpak-builder --user --install build dev.rdm.RDM.yml
+flatpak-builder --user --install build-test dev.rdm.RDM.json
 flatpak run dev.rdm.RDM
 ```
 
