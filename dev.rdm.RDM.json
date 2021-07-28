@@ -20,7 +20,7 @@
             "builddir": true,
             "build-commands": [
                 "pushd ./3rdparty/lz4/build/cmake && cmake -DBUILD_STATIC_LIBS=true && make -j $FLATPAK_BUILDER_N_JOBS && popd",
-                "pushd ./src && lrelease rdm.pro && qmake && make -j $FLATPAK_BUILDER_N_JOBS && popd",
+                "pushd ./src && lrelease rdm.pro && qmake VERSION=\"$(git describe --abbrev=0 --tags)+$(git rev-parse --short HEAD)\" && make -j $FLATPAK_BUILDER_N_JOBS && popd",
                 "cp ./bin/linux/release/rdm $FLATPAK_DEST/bin"
             ],
             "post-install": [
